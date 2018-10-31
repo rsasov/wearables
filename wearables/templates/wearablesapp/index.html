@@ -1,0 +1,31 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr  ">
+    <head>
+        <meta charset="utf-8">
+        <title>Results for smart wearables</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+
+    <body>
+    <h1>{{ results_title }}</h1>
+
+    <p>{{ post_content }}</p>
+
+    <p>Related Posts:</p>
+    <ul>
+        {% for item in item_list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    {% if comments %}
+        <p>This post has some comments</p>
+    {% else %}
+        <p>This post has no comments</p>
+    {% endif %}
+
+    </body>
+</html>
