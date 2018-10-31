@@ -22,4 +22,5 @@ urlpatterns = [
     path(r'', include('wearablesapp.urls')),
     path(r'results/', include('wearablesapp.urls')),
 ]
- urlpatterns += staticfiles_urlpatterns()
+
+urlpatterns += staticfiles_urlpatterns()

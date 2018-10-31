@@ -10,22 +10,75 @@
     </head>
 
     <body>
-    <h1>{{ results_title }}</h1>
-
-    <p>{{ post_content }}</p>
-
-    <p>Related Posts:</p>
-    <ul>
-        {% for item in item_list %}
-            <li>{{ item }}</li>
-        {% endfor %}
-    </ul>
-
-    {% if comments %}
-        <p>This post has some comments</p>
-    {% else %}
-        <p>This post has no comments</p>
-    {% endif %}
-
+      <div class="container">
+        <div class="jumbotron">
+          <h1>Results from wearables data processing</h1>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="card">
+              <img class="card-img-top" src="{% static '/images/RawDataPlot.png' %}">
+            </div>
+            <div class="card-body">
+              <p class="card-text">Raw Data</p>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">10min</p>
+              </div>
+            </div>
+          </div>
+            <div class="card">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">15min</p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">30min Healthy</p>
+              </div>
+            </div>
+          </div>
+            <div class="card">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">30min unhealthy</p>
+              </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+          <div class="col-sm-12 col-md-6 col-lg-6">
+            <div class="card">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">1hour workday</p>
+              </div>
+            </div>
+          </div>
+            <div class="card">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <img class="card-img-top" src="#">
+              <div class="card-body">
+                <p class="card-text">1hour weekend</p>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
     </body>
 </html>
