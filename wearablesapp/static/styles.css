@@ -1,0 +1,17 @@
+body {
+  background-image: url("https://images.pexels.com/photos/1020320/pexels-photo-1020320.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260");
+  background-size: contain;
+}
+
+.jumbotron {
+  background: #bcc9dd;
+  text-align: center;
+}
+
+.row {
+  align-items: center;
+}
+
+.raw_data_row {
+  margin: auto;
+}
