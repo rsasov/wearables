@@ -4,7 +4,10 @@ from .forms import ActivityPeriodForm
 
 # Create your views here.
 def index(request):
-    return render(request,'results.html')
+    context = {
+        "doc_title" : "Резултати от обработката и анализа на данните",
+    }
+    return render(request,'results.html', context)
 
 def activity(request):
     form = None
@@ -16,9 +19,7 @@ def activity(request):
     #else:
         # TODO: CREATE FORM
     context = {
+        "doc_title" : "Проверка на активност",
         "form": form,
     }
     return render(request,'activity.html',context)
-
-def test(request):
-    return HttpResponse("Hello there")
