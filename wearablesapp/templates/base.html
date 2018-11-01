@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <title>{{ doc_title }}</title>
-  <link rel="stylesheet" href="{% static " styles.css" %}">
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
           integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -27,6 +27,11 @@
     {% block content %}
     {% endblock %}
   </div>
+  <br>
+  <footer class="container">
+      <p class="float-right"><a href="#">Back to top</a></p>
+      <p>&copy; 2018 Created by Rosen Sasov</p>
+  </footer>
 </body>
 
 </html>

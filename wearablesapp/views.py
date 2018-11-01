@@ -16,10 +16,10 @@ def activity(request):
     #if form.is_valid():
         # TODO: ADD GRAPHICS
 
-    #else:
-        # TODO: CREATE FORM
+    else:
+        form = ActivityPeriodForm()
     context = {
         "doc_title" : "Проверка на активност",
-        "form": form,
+        "form":form
     }
     return render(request,'activity.html',context)

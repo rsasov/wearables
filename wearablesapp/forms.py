@@ -29,13 +29,17 @@ CHOICES = (
     ('23','23:00',),
     ('24','24:00',),
     )
-SPLITS = ('10 мин.','15 мин.','30 мин.','1 час',)
+SPLITS = (
+    (1,'10 мин.'),
+    (2,'15 мин.'),
+    (3,'30 мин.'),
+    (4,'1 час'),
+    )
 
 class ActivityPeriodForm(forms.Form):
     start_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select())
     end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select())
     time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect())
-
     def prepare_plot(self, ActivityPeriodForm):
         base_data_dir = "~/Documents/BasisProc/"
         if int(filter(str.isdigit, ActivityPeriodForm.time_split)) == 1:
@@ -46,4 +50,3 @@ class ActivityPeriodForm(forms.Form):
         files_num = len(professor_dir)
         file_to_plot = professor_dir[random.randint(1,len(professor_dir)+1)]
         data = pd.read_csv(file_to_plot)
-        
