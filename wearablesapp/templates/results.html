@@ -3,12 +3,9 @@
 
 {% block content%}
 <div class="row">
-  <div class="raw_data_row col-sm-6">
+  <div class="mx-auto col-sm-12 col-md-6 col-lg-6">
     <div class="card">
       <img class="card-img-top raw" src="{% static 'images/RawDataPlot.png' %}">
-    </div>
-    <div class="card-body">
-      <p class="card-text">Raw Data</p>
     </div>
   </div>
 </div>
@@ -67,6 +64,12 @@
         <p class="card-text">1hour weekend</p>
       </div>
     </div>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="mx-auto text-center col-sm-12 col-md-6 col-lg-6">
+    <a href="activity/" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Проверка на активност</a>
   </div>
 </div>
 {% endblock %}

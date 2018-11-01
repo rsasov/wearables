@@ -7,6 +7,9 @@ body {
   background: #bcc9dd;
   text-align: center;
 }
+.container {
+  align-items: center;
+}
 
 .row {
   align-items: center;

@@ -20,6 +20,6 @@ def activity(request):
         form = ActivityPeriodForm()
     context = {
         "doc_title" : "Проверка на активност",
-        "form":form
+        "form" : form,
     }
     return render(request,'activity.html',context)

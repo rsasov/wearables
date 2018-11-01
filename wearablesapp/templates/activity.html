@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
 <form class="" action="/activity/" method="post">
   <div class="form-group">
-    <label for="sel_start">Начало :</label>
-    <select class="form-control" id="sel_start">
+    <label>Начало :</label>
+    <select class="form-control">
       {% for start_time in form.start_interval %}
-      {% if start_time != "24:00" %}
-      <option>{{ start_time }}</option>
-      {% endif %}
+        {% if start_time != "24:00" %}
+          {{ start_time }}
+        {% endif %}
       {% endfor %}
     </select>
   </div>
   <div class="form-group">
-    <label for="sel_start">Край :</label>
-    <select class="form-control" id="sel_start">
+    <label for="sel_end">Край :</label>
+    <select class="form-control" id="sel_end">
       {% for end_time in form.end_interval %}
-      <option>{{ end_time }}</option>
+        {{ end_time }}
       {% endfor %}
     </select>
   </div>
