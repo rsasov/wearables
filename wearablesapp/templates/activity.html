@@ -2,9 +2,10 @@
 {% load static %}
 
 {% block content %}
+<p><a href=".."><button class="btn"><i class="fa fa-home"></i> Начало</button></a></p>
 <form class="" action="/activity/" method="post">
   <div class="form-group">
-    <label>Начало :</label>
+    <label>Начален час :</label>
     <select class="form-control">
       {% for start_time in form.start_interval %}
         {% if start_time != "24:00" %}
@@ -14,7 +15,7 @@
     </select>
   </div>
   <div class="form-group">
-    <label for="sel_end">Край :</label>
+    <label for="sel_end">Краен час :</label>
     <select class="form-control" id="sel_end">
       {% for end_time in form.end_interval %}
         {{ end_time }}
