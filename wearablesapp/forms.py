@@ -1,6 +1,6 @@
 from django import forms
 import pandas as pd
-import random
+import random, os
 
 CHOICES = (
     ('0','00:00',),
@@ -36,7 +36,7 @@ class ActivityPeriodForm(forms.Form):
     end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select())
     time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect())
 
-    def prepare_plot(ActivityPeriodForm):
+    def prepare_plot(self, ActivityPeriodForm):
         base_data_dir = "~/Documents/BasisProc/"
         if int(filter(str.isdigit, ActivityPeriodForm.time_split)) == 1:
             split = "1hour"
