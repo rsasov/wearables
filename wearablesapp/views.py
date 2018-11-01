@@ -22,4 +22,4 @@ def activity(request):
         "doc_title" : "Проверка на активност",
         "form" : form,
     }
-    return render(request,'activity.html',context)
+    return render(request,'activity_form.html',context)

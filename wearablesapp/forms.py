@@ -3,6 +3,7 @@ import pandas as pd
 import random, os
 
 CHOICES = (
+    ('','-----'),
     ('0','00:00'),
     ('1','01:00'),
     ('2','02:00'),
@@ -36,10 +37,10 @@ SPLITS = (
     )
 
 class ActivityPeriodForm(forms.Form):
-    start_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select())
-    end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select())
-    time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect())
-    
+    start_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select(), required = True)
+    end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select(), required = True)
+    time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect(), required = True)
+
     def prepare_plot(self, ActivityPeriodForm):
         base_data_dir = "~/Documents/BasisProc/"
         if int(filter(str.isdigit, ActivityPeriodForm.time_split)) == 1:

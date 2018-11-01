@@ -4,6 +4,7 @@
 {% block content %}
 <p><a href=".."><button class="btn"><i class="fa fa-home"></i> Начало</button></a></p>
 <form class="" action="/activity/" method="post">
+  {% csrf_token %}
   <div class="form-group">
     <label>Начален час :</label>
     <select class="form-control">
