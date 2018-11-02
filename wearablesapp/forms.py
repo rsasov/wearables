@@ -1,6 +1,8 @@
 from django import forms
 import pandas as pd
 import random, os
+from rpy2.robjects.packages import importr
+from rpy2.robjects import r
 
 CHOICES = (
     ('','-----'),
@@ -42,12 +44,6 @@ class ActivityPeriodForm(forms.Form):
     time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect(), required = True)
 
     def prepare_plotting_data(self):
-        base_data_dir = "~/Documents/BasisProc/"
-        if int(filter(str.isdigit, ActivityPeriodForm.time_split)) == 1:
-            split = "1hour"
-        else :
-            split = filter(str.isdigit,ActivityPeriodForm.time_split) + "min"
-        professor_dir = os.listdir(base_data_dir + "Professor/" + split)
-        files_num = len(professor_dir)
-        file_to_plot = professor_dir[random.randint(1,len(professor_dir)+1)]
-        data = pd.read_csv(file_to_plot)
+        r.load("~/Documents/django-rsas/wearables/.RData")
+        wearableProc = importr("wearableProc", lib_loc="~/Documents/django-rsas/wearables/R/x86_64-pc-linux-gnu-library/3.4")
+        make_plots = wearableProc.r['prepare_interval_activity_data(self.start_interval,self.end_interval,self.time_split)']

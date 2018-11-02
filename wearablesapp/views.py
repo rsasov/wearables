@@ -1,8 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import ActivityPeriodForm
-from rpy2.robjects.packages import importr
-from rpy2.robjects import r
 
 # Create your views here.
 def index(request):
@@ -12,11 +10,14 @@ def index(request):
     return render(request,'results.html', context)
 
 def activity(request):
-    r.load("~/Documents/django-rsas/wearables/.RData")
-    wearableProc = importr("wearableProc", lib_loc="~/Documents/django-rsas/wearables/R/x86_64-pc-linux-gnu-library/3.4")
     if request.method == 'POST':
         form = ActivityPeriodForm(request.POST)
-        #if form.is_valid():
+        if form.is_valid():
+            start = form.cleaned_data['start_interval'].value()
+            end = form.cleaned_data['end_interval'].value()
+            split = form.cleaned_data['time_split'].value()
+            activity = wearableProc.r['prepare_interval_activity_data']
+
             #start_interval = form.cleaned_data['start_interval']
             #end_interval = form.cleaned_data['end_interval']
             #time_split = form.cleaned_data['time_split']
@@ -24,7 +25,7 @@ def activity(request):
             #    "doc_title" : "Активност за въведен период",
             #}
 
-        return render(request,'activity.html',context)
+        return render(request,'activity.html')
     else:
         form = ActivityPeriodForm()
         context = {
