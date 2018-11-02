@@ -41,7 +41,7 @@ class ActivityPeriodForm(forms.Form):
     end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select(), required = True)
     time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect(), required = True)
 
-    def prepare_plot(self, ActivityPeriodForm):
+    def prepare_plotting_data(self):
         base_data_dir = "~/Documents/BasisProc/"
         if int(filter(str.isdigit, ActivityPeriodForm.time_split)) == 1:
             split = "1hour"

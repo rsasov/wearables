@@ -1,0 +1,40 @@
+clustering              Function for clustering by k means
+create_df               Function for creating a clean data frame ready
+                        for processing
+create_dirs             Function for creating separate directory for
+                        each individual
+execute_ind             Function for processing the individuals data
+execute_prof            Function for processing the professors data
+execute_script          Function creating directories, setting the data
+                        files, processing them, making daily clustering
+                        and validating it
+getmode                 Mode function for string data
+make_csv                Save file in proper dir
+make_extra_measurements
+                        Extra measurements to be done at processing
+                        stage
+merge_files             Function for merging files and sorting them by
+                        datetime
+merge_sort_files        Function for merging, sorting and placing the
+                        final processed results in dirs
+move_to_dirs            Function for placing the generated files from
+                        working dir to the proper dir for results
+plot_save               Generate and save activity profiles for
+                        provided interval
+prepare_data            Function for preparing the data
+prepare_date            Prepare date and set time in POSIXct format
+prepare_individual_data_csv
+                        Function for generating the data for individual
+prepare_interval_activity_data
+                        Main function to be executed
+prepare_professor_data_csv
+                        Function for generating the data for professor
+prepare_timehour_char_numeric
+                        Function for preparing the time base on the
+                        parameters for begin and end
+run_script              Main function
+save_24h_results        Function for calculating results for single
+                        individual
+set_interval            Setting the interval in correct format for
+                        directories
+split_apply_combine     Function implementing the aggregating step

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>{{ start_time }}</h1>
+<p><a href="../results/"><button class="btn"><i class="fa fa-home"></i> Начало</button></a>
+<a href="../activity/"><button class="btn"><i class="far fa-chart-bar"></i> Проверка на активност</button></a></p>
+<div class="row">
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="card">
+      <img class="card-img-top" src="{% static 'images/001.png' %}">
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-6 col-lg-6">
+    <div class="card">
+      <img class="card-img-top" src="{% static 'images/Professor.png' %}">
+    </div>
+  </div>
+</div>
+{% endblock %}
