@@ -1,8 +1,6 @@
 from django import forms
 import pandas as pd
 import random, os
-from rpy2.robjects.packages import importr
-from rpy2.robjects import r
 
 CHOICES = (
     ('','-----'),
@@ -42,8 +40,3 @@ class ActivityPeriodForm(forms.Form):
     start_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select(), required = True)
     end_interval = forms.ChoiceField(choices = CHOICES, widget=forms.Select(), required = True)
     time_split = forms.ChoiceField(choices = SPLITS, widget=forms.RadioSelect(), required = True)
-
-    def prepare_plotting_data(self):
-        r.load("~/Documents/django-rsas/wearables/.RData")
-        wearableProc = importr("wearableProc", lib_loc="~/Documents/django-rsas/wearables/R/x86_64-pc-linux-gnu-library/3.4")
-        make_plots = wearableProc.r['prepare_interval_activity_data(self.start_interval,self.end_interval,self.time_split)']
