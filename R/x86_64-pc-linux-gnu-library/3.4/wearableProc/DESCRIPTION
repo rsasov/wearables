@@ -10,4 +10,4 @@ Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.0
 Imports: stringr, dplyr, ggplot2
-Built: R 3.4.4; ; 2018-11-02 20:23:52 UTC; unix
+Built: R 3.4.4; ; 2018-11-02 22:42:24 UTC; unix
