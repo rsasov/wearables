@@ -8,9 +8,7 @@
     <label>Начален час :</label>
     <select class="form-control" name = "start_time">
       {% for start_time in form.start_interval %}
-        {% if start_time != "24:00" %}
           {{ start_time }}
-        {% endif %}
       {% endfor %}
     </select>
   </div>

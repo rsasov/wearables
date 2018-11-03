@@ -1,6 +1,4 @@
 from django import forms
-import pandas as pd
-import random, os
 
 CHOICES = (
     ('00:00','00:00'),

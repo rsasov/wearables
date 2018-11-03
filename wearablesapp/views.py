@@ -4,11 +4,9 @@ from .forms import ActivityPeriodForm
 from rpy2.robjects.packages import importr
 from rpy2.robjects import r
 
-
 def prepare_plotting_data(start,end,interval):
     r.load("~/Documents/django-rsas/wearables/.RData")
     wearableProc = importr("wearableProc", lib_loc="~/Documents/django-rsas/wearables/R/x86_64-pc-linux-gnu-library/3.4")
-    ggplot_lib = importr("ggplot2", lib_loc="~/Documents/django-rsas/wearables/R/x86_64-pc-linux-gnu-library/3.4")
     wearableProc.prepare_interval_activity_data(start,end,interval)
 
 # Create your views here.
@@ -33,8 +31,3 @@ def activity(request):
             "form" : form,
         }
         return render(request,'activity_form.html',context)
-
-    def post(self,request):
-        form = ActivityPeriodForm(request.POST)
-        if form.is_valid():
-            text = form.cleaned_data
